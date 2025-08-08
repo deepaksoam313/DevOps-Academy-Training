@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/deepaksoam313/DevOps-Academy-Training.git'
+                checkout scm
             }
         }
         stage('Build') {
