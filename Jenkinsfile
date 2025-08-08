@@ -1,13 +1,13 @@
 pipeline {
     agent any
-triggers {
+    triggers {
         // Poll GitHub every 1 minute for changes
         pollSCM('* * * * *')
     }
-stages {
+    stages {
         stage('Checkout') {
             steps {
-                git branch: 'dev', url: 'https://https://github.com/deepaksoam313/DevOps-Academy-Training.git'
+                git branch: 'Dev', url: 'https://https://github.com/deepaksoam313/DevOps-Academy-Training.git'
             }
         }
 
@@ -25,5 +25,26 @@ stages {
                 // Example test command
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying to $DEPLOY_PATH ...'
+                // Sample deployment (replace with your actual command)
+                sh """
+                mkdir -p $DEPLOY_PATH
+                cp -r * $DEPLOY_PATH/
+                echo 'Deployed at: ' $(date)
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build and Deployment successful.'
+        }
+    failure {
+            echo '❌ Build or Deployment failed.'
+        }
+    }
 }
-}
+
