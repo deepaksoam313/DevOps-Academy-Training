@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'Dev', url: 'https://https://github.com/deepaksoam313/DevOps-Academy-Training.git'
+                git branch: 'Dev', url: 'https://github.com/deepaksoam313/DevOps-Academy-Training.git'
             }
         }
 
