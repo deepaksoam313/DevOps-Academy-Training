@@ -23,3 +23,7 @@ stages {
             steps {
                 echo 'Running tests...'
                 // Example test command
+            }
+        }
+}
+}
