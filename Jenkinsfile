@@ -27,13 +27,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying to $DEPLOY_PATH ...'
+                echo 'Deploying to DEPLOY_PATH ...'
                 // Sample deployment (replace with your actual command)
-                sh """
-                mkdir -p $DEPLOY_PATH
-                cp -r * $DEPLOY_PATH/
-                echo 'Deployed at: ' $(date)
-                """
+                //sh """
+                //mkdir -p $DEPLOY_PATH
+                //cp -r * $DEPLOY_PATH/
+                //echo 'Deployed at: ' $(date)
+                //"""
             }
         }
     }
